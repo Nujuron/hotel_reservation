@@ -20,8 +20,24 @@
             </div>
             <div id="staytime">
                 <label for="numbernights">Número de noches</label>
-                <select multiple id="numbernights">
-
+                <select id="numbernights">
+                    <option value="" selected disabled hidden>0 Nights</option>
+                    <optgroup label="Populares">
+                        <option value="4">4 Nights</option>
+                        <option value="7">7 Nights</option>
+                        <option value="10">10 Nights</option>
+                        <option value="14">14 Nights</option>
+                    </optgroup>
+                    <optgroup label="Comunes">
+                        <option value="1">1 Night</option>
+                        <option value="2">2 Nights</option>
+                        <option value="3">3 Nights</option>
+                        <option value="4">4 Nights</option>
+                        <option value="5">5 Nights</option>
+                        <option value="6">6 Nights</option>
+                        <option value="7">7 Nights</option>
+                        <option value="8">8 Nights</option>
+                    </optgroup>
                     <!-- add options with js -->
                 </select>
                 <!-- no fucking idea (bootstrap?) -->
