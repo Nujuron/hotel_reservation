@@ -1,0 +1,25 @@
+{
+  "name": "reserva-hotel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nujuron/HotelReservation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nujuron/HotelReservation/issues"
+  },
+  "homepage": "https://github.com/Nujuron/HotelReservation#readme"
+}
