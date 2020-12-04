@@ -21,14 +21,11 @@ todayDate();
 
 
 let room = {
-    adult : 0,
-    child : {
-        number : 0,
-        age : [Number]
-    }
+    adult : Number,
+    children : [Number]
 }
 
-//let rooms = [];
+
 let hotel = {
     name : String,
     date : Date,
@@ -53,5 +50,52 @@ function printConsole(){
     console.log(`Nombre del hotel: ${hotel.name}`);
     console.log(`Fecha: ${hotel.date}`);
     console.log(`Duración de la estancia: ${hotel.nights} noches`);
+    hotel.rooms.forEach(room => console.log(`Adultos: ${room.adult}  Niños:${room.children.forEach(child => (child.toString()) + " ")}`))
     //console.log(`Información sobre las habitaciones: ${hotel.room}`);
 }
+function generateRoom(roomNumber) {
+    let roomDiv = document.createElement('div');
+    let numberBlock = document.createElement('p');
+    let name = document.createTextNode(roomNumber + ' Habitación');
+    numberBlock.appendChild(name);
+
+    let numberAdults = crearOpcionesNum(4,"numberAdults");
+    let adults = document.createElement('div');
+    adults.id = "adults";
+    let adultsText = document.createElement('p');
+    let textA = document.createTextNode('Adultos');
+    adultsText.appendChild(textA);
+    adults.appendChild(adultsText);
+    adults.appendChild(numberAdults);
+
+    let numberChildren = crearOpcionesNum(4,"numberChildren");
+    let children = document.createElement('div');
+    children.id = "children";
+    let childrenText = document.createElement('p');
+    let textB = document.createTextNode('Niños');
+    childrenText.appendChild(textB);
+    children.appendChild(childrenText);
+    children.appendChild(numberChildren);
+
+    roomDiv.id="room";
+    roomDiv.className = "col";
+    roomDiv.appendChild(numberBlock);
+    roomDiv.appendChild(adults);
+    roomDiv.appendChild(children);
+    return roomDiv;
+}
+
+function crearOpcionesNum(nOptions,stringClass) {
+    let select = document.createElement('select');
+    select.classList.add(stringClass);
+    let option, optionTxt;
+    for (let cont = 0; cont < nOptions; cont++) {
+        option = document.createElement('option');
+        optionTxt = document.createTextNode(cont);
+        option.appendChild(optionTxt);
+        option.setAttribute("value", cont);
+        select.appendChild(option);
+    }
+    return select;
+}
+generateRoom();
